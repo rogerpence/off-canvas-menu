@@ -1,14 +1,17 @@
-* {
+:root {
+    --main-background-color: lightgray;
+}
+
+*, ::after, ::before { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
  body {
     width: 100vw;
-    weight: 100vh;
-    font-family: sans serif;
+    height: 100vh;
+    font-family: sans-serif;
  }
  
  #page {
@@ -17,9 +20,8 @@
    height: 100vh;;
     grid-template-areas: "head head"
                         "main main"
-                        "nav nav" 
                         "foot  foot";
-   grid-template-rows: 50px 1fr 1fr 30px;
+   grid-template-rows: 50px 1fr 30px;
    grid-template-columns: 150px auto;   
  }
  
@@ -35,7 +37,7 @@
  
  #page > main {
    grid-area: main;
-   background-color: #ffff64;
+   background-color: var(--main-background-color);
  }
  
  #page > footer {
@@ -46,7 +48,7 @@
  @media (min-width: 768px) {   
     #page {   
         grid-template-areas: "head head"
-                             "nav  main"
+                             "main  main"
                              "foot  foot";
        grid-template-rows: 50px 1fr 30px;
        grid-template-columns: 250px auto;      
@@ -56,7 +58,7 @@
  @media (min-width: 1024px) {   
     #page {   
         grid-template-areas: "head head"
-                             "nav  main"
+                             "main  main"
                              "foot  foot";
        grid-template-rows: 50px 1fr 30px;
        grid-template-columns: 350px auto;      

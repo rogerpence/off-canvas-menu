@@ -1,12 +1,45 @@
 :root {
     --off-canvas-menu-width: 300px;
     --off-canvas-menu-width-negative: -300px;
+    --off-canvas-transition-time: 200ms;
 }
 
 /*
  | This was derived from this Scotch.io article. 
  | https://scotch.io/tutorials/off-canvas-menus-with-css3-transitions-and-transforms
  */
+
+
+div.site-menu-header {
+    background-color: lightgray;
+    padding: .3rem;
+} 
+
+div.site-menu-body {
+    padding: .75rem;
+}
+ 
+ul.menu-option-group {
+    list-style: none;
+    padding-left: 4px;
+}
+
+ul.menu-option-group li a {
+    color: black;
+}    
+
+.inner-container {
+    padding-top: 1rem;
+}
+
+.hide {
+    display: none;
+}
+
+i.icon {
+    font-size: 2rem;
+    color: black;
+}
 
 #site-wrapper {
     position: relative;
@@ -18,13 +51,14 @@
     width: 100%;
     /* height: 100%; */
     position: relative;
-    -webkit-transform: translateX(0);
+    /* -webkit-transform: translateX(0); */
     transform: translateX(0);
-    -webkit-transform: translate3d(0, 0, 0);
+    /* -webkit-transform: translate3d(0, 0, 0); */
     transform: translate3d(0, 0, 0);
-    -webkit-transition: 300ms ease all;
-    transition: 300ms ease all;
-    -webkit-backface-visibility: hidden;
+    /* -webkit-transition: 300ms ease all; */
+    /* transition: 300ms ease all; */
+    transition: var(--off-canvas-transition-time) ease all;
+    /* -webkit-backface-visibility: hidden; */
     backface-visibility: hidden;
 }
 
@@ -42,5 +76,4 @@
     top: 0;
     left: var(--off-canvas-menu-width-negative);
     background: #428bca;
-    padding: 15px;
 }

@@ -7,17 +7,31 @@ const documentReady = (fn) => {
     }
 };
 
-const toggleDisplay= function() {
-    document.querySelector('#site-wrapper').classList.toggle('show-nav');
+const assignEscapeKey = function() {
+    document.addEventListener('keyup', (e) => {
+        if (e.keyCode == 27) {
+            if (document.getElementById("site-wrapper").classList.contains('show-nav')) {
+                toggleNav();                    
+            }
+        }
+    });
+};
+
+const toggleNav = function() {
+    const siteWrapper = document.querySelector('#site-wrapper');
+    siteWrapper.classList.toggle('show-nav');
+    document.querySelector('.body-toggle').classList.toggle('hide');
 };
 
 const pageLoad = function() {
     let c1 = Array.from(document.querySelectorAll('.toggle-nav'));
     c1.forEach(element => {
         element.addEventListener('click', (e) => {
-            toggleDisplay(); 
+            toggleNav();
         });            
     });
+    assignEscapeKey();
 }    
 
 documentReady(pageLoad);
+
