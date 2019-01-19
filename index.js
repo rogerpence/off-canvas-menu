@@ -32,4 +32,4 @@ const pageLoad = function() {
 }    
 
 documentReady(pageLoad);
-
+toggleNav();

@@ -2,6 +2,7 @@
     --off-canvas-menu-width: 300px;
     --off-canvas-menu-width-negative: -300px;
     --off-canvas-transition-time: 200ms;
+    --off-canvas-menu-background-color: whitesmoke;
 }
 
 /*
@@ -43,7 +44,7 @@ i.icon {
 
 #site-wrapper {
     position: relative;
-    overflow: hidden;
+    overflow: hidden;    
     width: 100%;
 }
 
@@ -75,5 +76,6 @@ i.icon {
     position: absolute;
     top: 0;
     left: var(--off-canvas-menu-width-negative);
-    background: #428bca;
+    background: var(--off-canvas-menu-background-color);
+    overflow-y: auto;
 }
