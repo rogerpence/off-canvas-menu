@@ -10,9 +10,7 @@ const documentReady = (fn) => {
 const assignEscapeKey = function() {
     document.addEventListener('keyup', (e) => {
         if (e.keyCode == 27) {
-            if (document.getElementById("site-wrapper").classList.contains('show-nav')) {
-                toggleNav();                    
-            }
+            toggleNav();                    
         }
     });
 };
